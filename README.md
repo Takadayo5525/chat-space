@@ -27,8 +27,8 @@ Things you may want to cover:
 
 |Column|Type|Option|
 |------|----|------|
-|user_id|integer|null: false, foreigin_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|reference|null: false, foreigin_key: true|
+|group_id|reference|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -39,37 +39,35 @@ Things you may want to cover:
 |Column|Type|Option|
 |------|----|------|
 |name|string|null: false
-|email|string|null: false, unique: true|
-|pasward|string|null: false, unique:true|
 
 ### Association
--has_many :messages
--has_many :groups, through: :members
--has_many :members
+- has_many :messages
+- has_many :groups, through: :members
+- has_many :members
 
-##groupテーブル
-
-|Column|Type|Option|
-|------|----|------|
-|group_name|string|null: fales|
-
-###Association
-
--has_many :users, through: :members
--belongs_to :message
--has_many :members
-
-##massage
+## groupテーブル
 
 |Column|Type|Option|
 |------|----|------|
-|body|text|null: fales|
+|name|string|null: fales|
+
+### Association
+
+- has_many :users, through: :members
+- has_many :messages
+- has_many :members
+
+## massage
+
+|Column|Type|Option|
+|------|----|------|
+|body|text|
 |image|string|
-|group_id|integer|
-|user_id|integer|
+|group_id|reference|null: false, foreigin_key: true|
+|user_id|reference|null: false, foreign_key: true|
 
-###Association
+### Association
 
--belongs_to :user
--belongs_to :group
+- belongs_to :user
+- belongs_to :group
 
