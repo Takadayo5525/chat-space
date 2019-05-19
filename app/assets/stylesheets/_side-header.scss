@@ -1,0 +1,37 @@
+*{
+  box-sizing: border-box;
+}
+.chat-side{
+  width:300px;
+  float: left;
+
+  .side-header{
+    background-color: #253141;
+    height:100px;
+    width: 100%;
+    padding: 0px 20px;
+    position: relative;
+  
+    .side-header__box{
+      line-height: 100px;
+      height:100%;
+      width:100%;
+      display:flex;
+      justify-content: space-between;
+      &__user{
+        color: $side-font-color;
+        font-weight: bold;
+      }
+      &__menu{
+      display:flex;
+      justify-content: space-between;
+        .fa{
+          color: $side-font-color;
+        }
+      }
+    }
+  }
+}
+.side-header__box__menu--create-icon{
+  margin: 0 5px;
+}

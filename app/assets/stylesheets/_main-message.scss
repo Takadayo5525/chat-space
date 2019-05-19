@@ -1,0 +1,27 @@
+.main-message{
+  width: 100%;
+  height: calc(100vh - 190px);
+  background-color: #fafafa;
+  padding: 46px 40px 0 40px;
+  .message__block{
+    padding: 0px 0 40px 0;
+    &__information{
+      display: flex;
+      &__user-name{
+        margin: 0 0 10px 0;
+        font-size: 16px;
+        font-weight: bold;
+        color: $main-font-color;
+      }
+      &__date{
+        font-size: 12px;
+        margin-left: 10px;
+        color: $sub-font-color;
+      }
+    }
+    &__comment{
+      font-size: 14px;
+      color: $main-font-color;
+    }
+  }
+}

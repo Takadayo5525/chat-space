@@ -1,0 +1,14 @@
+@mixin g-name{
+  &:after{
+    font-size:15px;
+    font-weight:bold;
+    color:$side-font-color;
+  }
+}
+@mixin g-message{
+  &:after{
+    font-size:11px;
+    font-weight:bold;
+    color:$side-font-color;
+  }
+}

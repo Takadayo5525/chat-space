@@ -1,0 +1,46 @@
+.main-footer{
+  width: calc(100vw - 300px);
+  position: fixed;
+  bottom:0;
+  height:90px;
+  padding: 20px 40px;
+  background-color: #ddd;
+  form{
+    position: relative;
+
+    .main-footer__new-message{
+      height: 50px;
+      padding:0px 10px;
+      width: calc(100vw - 495px);
+      border-style: none;
+      .new-message--image{
+        position: absolute;
+        right:200px;
+
+      }
+      
+    }
+    .send-botton{
+      border: none;
+      color: white;
+      float: right;
+      font-size: 16px;
+      height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
+      position: absolute;
+      top: 0px;
+      background-color: #38aef0
+    }
+
+    .hidden{
+      display: none;
+    } 
+  } 
+}
+.new-message--image{
+  position: absolute;
+  right: 125px;
+  top: 10px;
+  font-size: 20px;
+}
