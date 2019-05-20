@@ -5,21 +5,16 @@
   height:90px;
   padding: 20px 40px;
   background-color: #ddd;
-  form{
-    position: relative;
-
-    .main-footer__new-message{
-      height: 50px;
-      padding:0px 10px;
-      width: calc(100vw - 495px);
-      border-style: none;
-      .new-message--image{
-        position: absolute;
-        right:200px;
-
-      }
-      
-    }
+  &__new-message{
+    height: 50px;
+    padding:0px 10px;
+    width: calc(100vw - 495px);
+    border-style: none;
+    .new-message--image{
+      position: absolute;
+      right:200px;
+    }      
+  }
     .send-botton{
       border: none;
       color: white;
@@ -36,11 +31,13 @@
     .hidden{
       display: none;
     } 
-  } 
 }
 .new-message--image{
   position: absolute;
   right: 125px;
   top: 10px;
   font-size: 20px;
+}
+form{
+  position: relative;
 }

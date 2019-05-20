@@ -4,7 +4,7 @@
   height: calc(100vh - 100px);
   width: 100%;
   padding: 0px 20px;
-  .side-main__box{
+  &__box{
     margin: 20px 0 40px 0;
   
     .side-main__box__group-name{
@@ -19,4 +19,4 @@
       color:$side-font-color;
     }
   }
-}
+} 
