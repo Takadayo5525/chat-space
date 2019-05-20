@@ -1,0 +1,22 @@
+.side-main{
+  float: left;
+  background-color: #2f3e51;
+  height: calc(100vh - 100px);
+  width: 100%;
+  padding: 0px 20px;
+  &__box{
+    margin: 20px 0 40px 0;
+  
+    &__group-name{
+      font-size:15px;
+      font-weight:bold;
+      color:$side-font-color;
+      margin-bottom: 5px; 
+    }
+    &__group-message{
+      font-size:11px;
+      font-weight:bold;
+      color:$side-font-color;
+    }
+  }
+} 
