@@ -12,3 +12,10 @@
     color:$side-font-color;
   }
 }
+@mixin clearfix {
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}

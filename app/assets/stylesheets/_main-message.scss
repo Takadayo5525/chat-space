@@ -3,6 +3,7 @@
   height: calc(100vh - 190px);
   background-color: #fafafa;
   padding: 46px 40px 0 40px;
+  overflow: scroll;
   .message__block{
     padding: 0px 0 40px 0;
     &__information{

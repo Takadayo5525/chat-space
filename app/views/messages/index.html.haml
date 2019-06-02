@@ -2,66 +2,51 @@
   .side-header
     .side-header__box
       %p.side-header__box__user
-        test-user
+        = current_user.name
       %ul.side-header__box__menu
         %li.side-header__box__menu--create-icon
-          = link_to do
+          = link_to new_group_path do
             %i.fa.fa-edit
         %li.side-header__box__menu--edit-icon
-          = link_to do
+          = link_to edit_user_path(current_user) do
             %i.fa.fa-cog
-  .side-main
-    .side-main__box
-      %p.side-main__box__group-name
-        sample-group
-      %p.side-main__box__group-message
-        hello!
-
-    .side-main__box
-      %p.side-main__box__group-name
-        example
-      %p.side-main__box__group-message
-        まだメッセージがありません
+  .side-main   
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group) do
+        .side-main__box
+          %p.side-main__box__group-name
+            =group.name
+          %p.side-main__box__group-message
+            = group.show_last_message
 
 .main
   .main-header
     .main-header__left__box
       %p.main-header__left__box__group-name
-        test-group
-      %p.main-header__left__box__member
-        Member:mmmmmmm
+        =@group.name
+      %ul.main-header__left__box__member
+        Member :
+        - @group.users.each do |group|
+          %li.main-header__left__box__member--users
+            = group.name
+
 
     .main-header__right__box
       .main-header__right__box--botton
-        = link_to '',class: "btn-large" do
+        = link_to edit_group_path(current_user) ,class: "btn-large" do
           .edit-botton Edit
 
   .main-message
-    .message__block
-      .message__block__information
-        %p.message__block__information__user-name
-          test-user
-        %p.message__block__information__date
-          2019/05/15(Web) 17:00:00
-      %p.message__block__comment
-        こんにちは！
-        
-    .message__block
-      .message__block__information
-        %p.message__block__information__user-name
-          test-user
-        %p.message__block__information__date
-          2019/05/15(Web) 16:00:00
-      %p.message__block__comment
-        さようなら！
+    = render partial: 'message', collection: @messages
 
   .main-footer
-    %form
-      %input.main-footer__new-message{placeholder:"type a message", type:"text"}
-        %label.new-message--image{for:"upload-icon"}
-          %i.fa.fa-image
-          %input.hidden{type:"file",id: "upload-icon"}
-      %input.send-botton{type:"submit",value:"Send"}
+    = form_for [@group, @message] do |f|
+      =f.text_field :content, class:'main-footer__new-message',placeholder:'type a message'
+      .form__icon  
+        = f.label :image, class:'form__icon--image' do
+          = fa_icon "image" 
+          = f.file_field :image,class:'hidden'
+      =f.submit 'Send', class:'send-botton'
 
         
         
