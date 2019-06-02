@@ -1,10 +1,15 @@
 @import "./reset";
 @import "font-awesome";
 @import "./config/variable";
+@import "./config/colors";
 @import "./mixin/clearfix";
+@import "mixin/vendor_prefix";
+@import "./user";
+@import "./group";
 @import "./side-header";
 @import "./side-main";
 @import "./main";
 @import "./main-header";
 @import "./main-message";
 @import "./main-footer";
+@import "./flash";
