@@ -40,7 +40,7 @@
     = render partial: 'message', collection: @messages
 
   .main-footer
-    = form_for [@group, @message] do |f|
+    = form_for [@group, @message], id: 'new_message' do |f|
       =f.text_field :content, class:'main-footer__new-message',placeholder:'type a message'
       .form__icon  
         = f.label :image, class:'form__icon--image' do
