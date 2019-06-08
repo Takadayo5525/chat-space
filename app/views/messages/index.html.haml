@@ -15,7 +15,7 @@
       = link_to group_messages_path(group) do
         .side-main__box
           %p.side-main__box__group-name
-            =group.name
+            = group.name
           %p.side-main__box__group-message
             = group.show_last_message
 
@@ -25,11 +25,10 @@
       %p.main-header__left__box__group-name
         =@group.name
       %ul.main-header__left__box__member
-        Member :
-        - @group.users.each do |group|
+        Member : 
+        - @group.group_users.each do |group|
           %li.main-header__left__box__member--users
-            = group.name
-
+            = group.user.name
 
     .main-header__right__box
       .main-header__right__box--botton
