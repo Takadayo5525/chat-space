@@ -49,9 +49,9 @@ $(function(){
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
       var last_message_id = $('.main-message').children().last().data('message-id')
       var path = location.pathname.split("/")
-      var path2 = path[2]  
+      var group_id = path[2]  
       $.ajax({
-        url: `/groups/${path2}/api/messages`,
+        url: `/groups/${group_id}/api/messages`,
         type: 'GET',
         dataType: 'json',
         data: {id: last_message_id}
