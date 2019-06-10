@@ -46,7 +46,7 @@ $(function(){
   });
 
   var reloadMessages = function(){
-      if (window.location.href.match(/\/groups\/\d+\/messages/)){
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
       var last_message_id = $('.main-message').children().last().data('message-id')
       var path = location.pathname.split("/")
       var path2 = path[2]  
@@ -65,7 +65,7 @@ $(function(){
         })
       })
       .fail(function(){ 
-        console.log('error');
+        alert('error');
       });
     }
   };
