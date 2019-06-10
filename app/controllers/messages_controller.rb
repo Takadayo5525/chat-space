@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
-    @messages = @group.messages.order("created_at DESC").includes(:user)
+    @messages = @group.messages.order("created_at ASC").includes(:user)
   end
 
   def create
