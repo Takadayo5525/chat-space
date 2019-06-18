@@ -34,13 +34,15 @@ $(function(){
 
   .done(function(users){
     $("#user-search-result").empty();
-    if (users.length !== 0){
-      users.forEach(function(user){
-        appendUser(user);
-      });
-    }
-    else{
-      appendErrMsgToHTML("一致する名前はありません");
+    if (input.length !== 0) {
+      if (users.length !== 0){
+        users.forEach(function(user){
+          appendUser(user);
+        });
+      }
+      else{
+        appendErrMsgToHTML("一致する名前はありません");
+      }
     }
   })
   .fail(function(){

@@ -32,7 +32,7 @@
 
     .main-header__right__box
       .main-header__right__box--botton
-        = link_to edit_group_path(current_user) ,class: "btn-large" do
+        = link_to edit_group_path(@group.id) ,class: "btn-large" do
           .edit-botton Edit
 
   .main-message
