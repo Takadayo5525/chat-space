@@ -39,7 +39,7 @@ set :repo_url, "git@example.com:me/my_repo.git"
 # set :ssh_options, verify_host_key: :secure
 
 # config valid only for current version of Capistrano
-lock '~> 3.11.0'
+lock "~> 3.11.0"
 
 set :application, 'chat-space'
 set :repo_url,  'git@github.com:Takadayo5525/chat-space.git'
